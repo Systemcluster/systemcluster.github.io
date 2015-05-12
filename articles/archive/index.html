@@ -1,0 +1,30 @@
+---
+layout: page
+title: All Articles
+
+---
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li>
+      <span>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        {% unless post.categories == empty %}
+          <span class="post-meta">
+            <span class="fa fa-fw fa-tags"></span>
+            {% for category in post.categories %}
+              <a class="category-link" href="{{ "/articles/categories/" | prepend: site.baseurl }}#{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+          </span>
+        {% endunless %}
+      </span>
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+    </li>
+  {% endfor %}
+</ul>
+
+<p>
+  <a class="rss-subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}">Subscribe via RSS</a>
+</p>

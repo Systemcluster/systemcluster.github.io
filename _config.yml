@@ -1,0 +1,27 @@
+# Site settings
+title: Systemcluster
+email: systemcluster@users.noreply.github.com
+description: >
+  Web Design, Programming & Game Development
+baseurl: "" # subpath of the site without leading and trailing slash
+url: https://systemcluster.github.io # the base hostname & protocol 
+
+twitter_username:
+github_username: systemcluster
+gravatar_username: b8bae866d3aafaa9b4cce23f48b78c0b
+gplus_username: ChristianSdunek
+youtube_username: ChristianSdunek
+
+paginate: 8
+paginate_path: /articles/:num/
+permalink: /articles/:year/:month/:day/:title/
+
+
+# Build settings
+safe: true
+markdown: kramdown
+
+
+# Kramdown settings
+kramdown:
+  input: GFM

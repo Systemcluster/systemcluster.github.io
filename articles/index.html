@@ -1,0 +1,75 @@
+---
+layout: page
+title: Articles
+
+menu_position: 2
+menu_title: Articles
+
+---
+
+<ul class="post-list">
+  {% for post in paginator.posts %}
+    <li>
+      <span>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        {% unless post.categories == empty %}
+          <span class="post-meta">
+            <span class="fa fa-fw fa-tags"></span>
+            {% for category in post.categories %}
+              <a class="category-link" href="{{ "/articles/categories/" | prepend: site.baseurl }}#{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+            </span>
+        {% endunless %}
+      </span>
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+      <div class="post-content">
+        {% if post.synopsis %}
+          <p>{{ post.synopsis }}</p>
+        {% else %}
+          {{ post.excerpt }}
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+      <a class="paginate-prev" href="{{ site.paginate_path | replace: ':num', '' | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+    {% else %}
+      <a class="paginate-prev" href="{{ site.paginate_path | replace: ':num', paginator.previous_page | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+    {% endif %}
+  {% else %}
+    <span class="paginate-prev paginate-prev-disabled">&laquo; Prev</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <span class="paginate-current">{{ page }}</span>
+    {% elsif page == 1 %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: ':num', '' | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: ':num', page | replace: '//', '/' }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a class="paginate-next" href="{{ site.paginate_path | replace: ':num', paginator.next_page | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% else %}
+    <span class="paginate-next paginate-next-disabled" >Next &raquo;</span>
+  {% endif %}
+</div>
+
+{% endif %}
+
+<div>
+  {% if paginator.total_pages > 1 %}
+    <a href="{{ "/articles/archive/" | prepend: site.baseurl }}">View all Articles</a> &middot; 
+  {% endif %}
+
+  <a class="rss-subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}">Subscribe via RSS</a>
+</div>

@@ -1,0 +1,201 @@
+
+.site-header {
+  border-top: 4px solid $header-color;
+  border-bottom: 1px solid $grey-color-light;
+
+  padding: $spacing-unit/2 0;
+
+  @include media($small-screen) {
+    padding: 2px 0;
+  }
+
+  & > .wrapper {
+    display: table;
+  }
+}
+
+.site-title {
+  position:relative;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  a,
+  a:visited {
+      color: $grey-color-dark;
+  }
+  
+  display: block;
+  display: table-row;
+  text-align: center;
+}
+
+.site-nav {
+  position:relative;
+  line-height: 2;
+
+  a,
+  a:visited {
+      color: $grey-color-dark;
+  }
+
+  display:block;
+  display: table-row;
+
+  .page-link {
+    line-height: $base-line-height;
+    padding: 5px;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+}
+
+
+.site-footer {
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit 0;
+  font-size: 0.8rem;
+  color: $grey-color;
+
+  & > .wrapper {
+    display: table;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+.social-media-list {
+  display: inline-block;
+  margin: 0;
+
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px 0 0;
+  }
+}
+
+.slide {
+  position: relative;
+  height: 380px;
+  background: url("/images/slate.jpg") rgb(18,18,18) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: $text-color-bright;
+  overflow: auto;
+  
+  z-index: 10;
+
+  h1 {
+    color: $header-color;
+    width: 100%;
+    text-align: center;
+    margin-top: 160px;
+    
+  }
+
+  .slide-bg-1 {
+    background: url("/images/dust-far.jpg") repeat 0 0 fixed;
+    opacity: 0.42;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 8;
+  }
+  .slide-bg-2 {
+    background: url("/images/dust-near.jpg") repeat 0 0 fixed;
+    opacity: 0.42;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+  .slide-bg-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+}
+
+
+.site-content {
+  padding: $spacing-unit 0 $spacing-unit*1.5 0;
+  @include media($small-screen) {
+    padding: $spacing-unit/2 0;
+  }
+}
+
+
+.list-header {
+  font-size: 1.1em;
+}
+.category-link, .category-link:visited {
+  color: $grey-color;
+}
+
+
+.page {
+
+}
+
+.post {
+
+}
+
+.post-content {
+  margin-top: $spacing-unit/2;
+}
+
+.post-backlink {
+  color: $grey-color;
+  margin-top: $spacing-unit;
+}
+
+.post-meta {
+  color: $grey-color;
+  padding-right: $spacing-unit/2;
+  font-size: 0.8rem;
+}
+
+.post-list {
+  list-style: none;
+  margin: 0;
+
+  & > li {
+    margin-bottom: $spacing-unit;
+  }
+  .post-content {
+    margin-top: $spacing-unit/2;
+  }
+  h2 {
+    margin: 0;
+  }
+}
+
+
+.page-content {
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.pagination {
+  margin: 10px 0;
+}
+.paginate-next-disabled, .paginate-prev-disabled {
+  color: $grey-color;
+}
+.paginate-current {
+
+}
