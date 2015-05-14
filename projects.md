@@ -10,7 +10,7 @@ menu_title: Projects
 
 ## Websites
 
-<a class="list-header" href="//cleanslategames.com">Cleanslate Games</a>
+<a class="list-header" href="http://cleanslategames.com">Cleanslate Games</a>
 Single-page website project featuring a minimalistic, modern design.
 
 ## Miscellaneous
