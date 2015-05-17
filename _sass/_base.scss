@@ -111,10 +111,11 @@ blockquote {
 
 pre,
 code {
-    font-size: 15px;
+    font-size: $code-font-size;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: $background-color;
+    background-color: #f7f7f7;
+    font-family: $code-font-family;
 }
 
 code {
@@ -123,7 +124,6 @@ code {
 
 pre {
     padding: 8px 12px;
-    overflow-x: scroll;
 
     > code {
         border: 0;
