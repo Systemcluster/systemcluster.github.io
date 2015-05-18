@@ -9,7 +9,7 @@ menu_title: Articles
 
 <ul class="post-list">
   {% for post in paginator.posts %}
-    <li>
+    <li id="{{ post.id }}">
       <span>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         {% unless post.categories == empty %}
@@ -25,11 +25,47 @@ menu_title: Articles
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
       <div class="post-content">
-        {% if post.synopsis %}
-          <p>{{ post.synopsis }}</p>
-        {% else %}
-          {{ post.excerpt }}
-        {% endif %}
+        <p id="post-preview-{{ post.id }}">
+          {% if post.synopsis %}
+            {{ post.synopsis | strip_html }}
+          {% else %}
+            {{ post.excerpt | strip_html }}
+          {% endif %}
+        </p>
+        <div id="post-full-{{ post.id }}" style="display:none;">
+          {{ post.content }}
+        </div>
+        <script>
+          (function() { 
+            var preview = document.getElementById("post-preview-{{ post.id }}");
+            var full = document.getElementById("post-full-{{ post.id }}");
+            var showpost = function(e) {
+              e.preventDefault();
+              preview.style.display = "none";
+              full.style.display = "block";
+            };
+            var hidepost = function(e) {
+              full.style.display = "none";
+              preview.style.display = "block";
+            };
+            var p_span = document.createElement("span");
+            var p_a = document.createElement("a");
+            var f_span = document.createElement("span");
+            var f_a = document.createElement("a");
+            p_a.innerHTML = "Read more...";
+            p_a.setAttribute("class", "post-more");
+            p_a.setAttribute("href", "#{{ post.id }}");
+            p_a.onclick = showpost;
+            f_a.innerHTML = "Read less...";
+            f_a.setAttribute("class", "post-more");
+            f_a.setAttribute("href", "#{{ post.id }}");
+            f_a.onclick = hidepost;
+            p_span.appendChild(p_a);
+            preview.appendChild(p_span);
+            f_span.appendChild(f_a);
+            full.appendChild(f_span);
+          })();
+        </script>
       </div>
     </li>
   {% endfor %}
