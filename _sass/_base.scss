@@ -124,11 +124,11 @@ code {
 
 pre {
     padding: 8px 12px;
+    overflow: auto;
 
     > code {
         border: 0;
-        padding-right: 0;
-        padding-left: 0;
+        padding: 0;
     }
 }
 
