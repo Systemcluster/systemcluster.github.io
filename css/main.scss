@@ -9,6 +9,7 @@ $small-font-size:  0.875rem;
 $base-line-height: 1.5;
 $code-font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 $code-font-size:   0.8rem;
+$header-font-family: "Lobster", $base-font-family;
 
 $spacing-unit:     34px;
 
@@ -16,12 +17,14 @@ $text-color:       #111;
 $text-color-bright:rgb(200,200,200);
 $background-color: #fefefe;
 $brand-color:      #2a7ae2;
-
 $header-color:     rgb(232, 0, 100);
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+$grey-color-medium:lighten($grey-color, 20%);
+
+$animation-speed:  0.15s;
 
 // Width of the content area
 $content-width:    900px;
@@ -34,9 +37,6 @@ $medium-screen:    800px;
     & {
       position: relative;
     }
-    &:hover {
-      text-decoration: none;
-    }
     &:before {
       content: "";
       position: absolute;
@@ -44,16 +44,29 @@ $medium-screen:    800px;
       height: $height;
       bottom: 0;
       left: 0;
+      margin-bottom: 1px;
       background-color: $grey-color;
 
-      -wekbit-transition: width 0.2s ease;
-      -moz-transition: width 0.2s ease;
-      -o-transition: width 0.2s ease;
-      transition: width 0.2s ease;
+      -wekbit-transition: all $animation-speed ease;
+      -moz-transition: all $animation-speed ease;
+      -o-transition: all $animation-speed ease;
+      transition: all $animation-speed ease;
     }
     &:hover:before {
       width: 100%;  
+      background-color: $grey-color;
     }
+}
+@mixin animated-color($color) {
+  & {
+    -wekbit-transition: color $animation-speed*1.5 ease;
+    -moz-transition: color $animation-speed*1.5 ease;
+    -o-transition: color $animation-speed*1.5 ease;
+    transition: color $animation-speed*1.5 ease;
+  }
+  &:hover {
+    color: $color;
+  }
 }
 
 @mixin media($device) {

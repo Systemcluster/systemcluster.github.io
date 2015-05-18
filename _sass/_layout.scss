@@ -18,18 +18,19 @@
   position:relative;
   font-size: 1.6rem;
   line-height: 1.8;
+
   a {
+    text-decoration: none;
     &, &:visited {
       color: $grey-color-dark;
     }
-    &:hover {
-      text-decoration: none;
-    }
+    @include animated-color($header-color);
   }
 
   display: block;
   display: table-row;
   text-align: center;
+  font-family: $header-font-family;
 }
 
 .site-nav {
@@ -37,10 +38,11 @@
   line-height: 2;
 
   a {
+    text-decoration: none;
     &, &:visited {
         color: $grey-color-dark;
     }
-    @include animated-underscore(1.5px);
+    @include animated-color(rgb(0,0,0));
     &:before {
       bottom: 2px;
       left: 5px;
@@ -151,8 +153,10 @@
 .list-header {
   font-size: 1.1em;
 }
-.category-link, .category-link:visited {
-  color: $grey-color;
+.category-link {
+  &, &:visited {
+    color: $grey-color;
+  }
 }
 
 
