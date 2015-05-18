@@ -18,11 +18,15 @@
   position:relative;
   font-size: 1.6rem;
   line-height: 1.8;
-  a,
-  a:visited {
+  a {
+    &, &:visited {
       color: $grey-color-dark;
+    }
+    &:hover {
+      text-decoration: none;
+    }
   }
-  
+
   display: block;
   display: table-row;
   text-align: center;
@@ -32,9 +36,16 @@
   position:relative;
   line-height: 2;
 
-  a,
-  a:visited {
-      color: $grey-color-dark;
+  a {
+    &, &:visited {
+        color: $grey-color-dark;
+    }
+    @include animated-underscore(1.5px);
+    &:before {
+      bottom: 2px;
+      left: 5px;
+      overflow: visible;
+    }
   }
 
   display:block;

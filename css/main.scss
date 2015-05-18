@@ -30,6 +30,32 @@ $small-screen:     600px;
 $medium-screen:    800px;
 
 
+@mixin animated-underscore($height) {
+    & {
+      position: relative;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: $height;
+      bottom: 0;
+      left: 0;
+      background-color: $grey-color;
+
+      -wekbit-transition: width 0.2s ease;
+      -moz-transition: width 0.2s ease;
+      -o-transition: width 0.2s ease;
+      transition: width 0.2s ease;
+    }
+    &:hover:before {
+      width: 100%;  
+    }
+}
+
 @mixin media($device) {
     @media screen and (max-width: $device) {
         @content;
@@ -38,10 +64,10 @@ $medium-screen:    800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting",
-        "customizations",
+    "base",
+    "layout",
+    "syntax-highlighting",
+    "customizations",
 
-        "font-awesome/font-awesome"
+    "font-awesome/font-awesome"
 ;
