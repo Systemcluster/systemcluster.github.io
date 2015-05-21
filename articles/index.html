@@ -43,6 +43,7 @@ menu_title: Articles
               e.preventDefault();
               preview.style.display = "none";
               full.style.display = "block";
+              history.pushState(null,null,this.hash);
             };
             var hidepost = function(e) {
               full.style.display = "none";
