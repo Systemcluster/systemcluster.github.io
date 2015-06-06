@@ -25,7 +25,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 $grey-color-medium:lighten($grey-color, 20%);
 
 $white-color:      rgb(254,254,254);
-$header-text-color:rgb(45,45,45);
+$header-text-color:$text-color;
 
 $animation-speed:  0.15s;
 
