@@ -101,7 +101,8 @@ permalink: /chaika/
   </div>
   <div id="chaika_footer">
     <p>
-      Make sure to be in a bright setting to ensure correct recognition of your face.
+      Adequate lighting conditions are required to ensure a correct face recognition.<br>
+      May run slow on some hardware.
     </p>
     <p>
       &copy; <a href="/">Christian Sdunek</a>, 2015 - Using <a href="https://github.com/auduno/clmtrackr/">clmtrackr</a> - Chaika face overlay by <a href="http://switchdraw.deviantart.com/art/CHAIKA-s-Face-456893291">switchdraw</a>
@@ -110,10 +111,6 @@ permalink: /chaika/
   <script>
 
     var video = document.getElementById("chaika_video");
-    navigator.getUserMedia = (navigator.getUserMedia ||
-                              navigator.webkitGetUserMedia ||
-                              navigator.mozGetUserMedia ||
-                              navigator.msGetUserMedia);
     var canvas = document.getElementById("chaika_canvas");
     var context = canvas.getContext("2d");
     var control = document.getElementById("chaika_control");
@@ -121,11 +118,15 @@ permalink: /chaika/
     var debug = document.getElementById("chaika_debug");
     var image = document.getElementById("chaika_image");
 
+    navigator.getUserMedia = (navigator.getUserMedia ||
+                              navigator.webkitGetUserMedia ||
+                              navigator.mozGetUserMedia ||
+                              navigator.msGetUserMedia);
+
     var drawdebug = false;
 
     var ctracker = new clm.tracker({ useWebGL: true });
     ctracker.init(pModel);
-
 
     var performct = function() {
       requestAnimationFrame(performct);
@@ -184,24 +185,31 @@ permalink: /chaika/
       chaika_video.style.display = "none";
       chaika_canvas.style.display = "none";
       var p = document.createElement("p");
-      p.textContent = "Your browser doesn't support video streaming or camera access is disabled.";
+      p.textContent = "Your browser doesn't support camera access or camera access is disabled.";
       p.id = "chaika_info";
       chaika_content.appendChild(p);
     }
 
-    if(navigator.getUserMedia) {
-      var fstream = function(stream) {
-        var url = window.URL;
-        video.src = url ? url.createObjectURL(stream) : stream;
-        video.addEventListener("playing", initct);
-        video.play();
-      };
-      var ferror = function(e) {
-        console.log(e);
-        error();
-      };
+    var fstream = function(stream) {
+      var url = window.URL;
+      video.src = url ? url.createObjectURL(stream) : stream;
+      video.addEventListener("playing", initct);
+      video.play();
+    };
+    var ferror = function(e) {
+      console.log(e);
+      error();
+    };
+
+    // new api
+    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({audio: false, video: {width: 600, height: 450}}).then(fstream).catch(ferror);
+    }
+    // old api 
+    else if(navigator.getUserMedia) {
       navigator.getUserMedia({video:true, audio:false}, fstream, ferror);
     }
+    // unsupported
     else {
       error();
     }
