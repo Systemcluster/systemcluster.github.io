@@ -3,6 +3,7 @@ layout: landing
 
 ---
 
+
 # Projects
 
 Interesting or otherwise relevant projects I've been working on are listed here.
@@ -12,7 +13,7 @@ Interesting or otherwise relevant projects I've been working on are listed here.
 * <a class="list-header" href="/chaika/" data-no-turbolink>Be Chaika</a>
   Small webapp utilizing the webcam with HTML5 video streaming.
 
-* <a class="list-header" href="/cleanslategames/" data-no-turbolink>Cleanslate Games</a>
+* <a class="list-header" href="http://cleanslategames.com" data-no-turbolink>Cleanslate Games</a>
   Single-page website prototype project featuring a minimalistic, modern design.
 
 ## Browser Extensions
