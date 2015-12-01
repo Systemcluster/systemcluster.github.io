@@ -5,7 +5,7 @@ permalink: /license/
 
 ---
 
-All software and source code on this page, if not stated otherwise, is subject to the following license:
+All software and source code on this site, if not stated otherwise, is subject to the following license:
 
 {% highlight text %}
 
