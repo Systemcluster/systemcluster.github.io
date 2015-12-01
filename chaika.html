@@ -91,8 +91,8 @@ permalink: /chaika/
 <body>
   <h1>BE CHAIKA</h1>
   <div id="chaika_content">
-    <video id="chaika_video" preload="auto" loop width="600" height="450" style=""></video>
-    <canvas id="chaika_canvas" width="600" height="450" style=""></canvas>
+    <video id="chaika_video" preload="auto" loop width="720" height="480" style=""></video>
+    <canvas id="chaika_canvas" width="720" height="480" style=""></canvas>
   </div>
   <img id="chaika_image" src="/images/chaika2.png">
   <div id="chaika_control">
@@ -129,11 +129,9 @@ permalink: /chaika/
     ctracker.init(pModel);
 
     var performct = function() {
-      requestAnimationFrame(performct);
-
       var pos = ctracker.getCurrentPosition();
       var par = ctracker.getCurrentParameters();
-      if(pos && ctracker.getScore() > 0.20) {
+      if(pos && ctracker.getScore() > 0.250) {
         context.setTransform(1, 0, 0, 1, 0, 0);
         context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -153,7 +151,6 @@ permalink: /chaika/
         //var angle = Math.atan2(y, x) + (90 * Math.PI / 180);
         var angle = par[1] / 2.5;
 
-
         var center = pos[33];
 
         context.save();
@@ -164,6 +161,7 @@ permalink: /chaika/
         context.drawImage(image, 0, 0, width, height);
         context.restore();
       }
+      requestAnimationFrame(performct);
     }
 
     var resetct = function() {
@@ -203,7 +201,7 @@ permalink: /chaika/
 
     // new api
     if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({audio: false, video: {width: 600, height: 450}}).then(fstream).catch(ferror);
+      navigator.mediaDevices.getUserMedia({audio: false, video: {width: 720, height: 480}}).then(fstream).catch(ferror);
     }
     // old api 
     else if(navigator.getUserMedia) {
