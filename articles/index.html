@@ -9,7 +9,7 @@ menu_title: Articles
 
 <ul class="post-list">
   {% for post in paginator.posts %}
-    <li id="{{ post.id }}">
+    <li class="post" id="{{ post.id }}">
       <span>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         {% unless post.categories == empty %}
@@ -31,41 +31,30 @@ menu_title: Articles
           {% else %}
             {{ post.excerpt | strip_html }}
           {% endif %}
+          <span>
+            <a id="post-show-{{ post.id }}" class="post-more" href="{{ post.url | prepend: site.baseurl }}">Read more...</a>
+          </span>
         </p>
         <div id="post-full-{{ post.id }}" style="display:none;">
           {{ post.content }}
+          <span>
+            <a id="post-hide-{{ post.id }}" class="post-more" href="#{{ post.id }}">Read less...</a>
+          </span>
         </div>
         <script>
-          (function() { 
-            var preview = document.getElementById("post-preview-{{ post.id }}");
-            var full = document.getElementById("post-full-{{ post.id }}");
-            var showpost = function(e) {
-              e.preventDefault();
-              preview.style.display = "none";
-              full.style.display = "block";
-              history.pushState(null,null,this.hash);
-            };
-            var hidepost = function(e) {
-              full.style.display = "none";
-              preview.style.display = "block";
-            };
-            var p_span = document.createElement("span");
-            var p_a = document.createElement("a");
-            var f_span = document.createElement("span");
-            var f_a = document.createElement("a");
-            p_a.innerHTML = "Read more...";
-            p_a.setAttribute("class", "post-more");
-            p_a.setAttribute("href", "#{{ post.id }}");
-            p_a.onclick = showpost;
-            f_a.innerHTML = "Read less...";
-            f_a.setAttribute("class", "post-more");
-            f_a.setAttribute("href", "#{{ post.id }}");
-            f_a.onclick = hidepost;
-            p_span.appendChild(p_a);
-            preview.appendChild(p_span);
-            f_span.appendChild(f_a);
-            full.appendChild(f_span);
-          })();
+          document.getElementById("post-show-{{ post.id }}").setAttribute("href", "#{{ post.id }}");
+          document.getElementById("post-show-{{ post.id }}").onclick = function(e) {
+            e.preventDefault();
+            document.getElementById("post-preview-{{ post.id }}").style.display = "none";
+            document.getElementById("post-full-{{ post.id }}").style.display = "block";
+            history.pushState(null,null,this.hash);
+          }
+          document.getElementById("post-hide-{{ post.id }}").onclick = function(e) {
+            e.preventDefault();
+            document.getElementById("post-full-{{ post.id }}").style.display = "none";
+            document.getElementById("post-preview-{{ post.id }}").style.display = "block";
+            document.getElementById("{{ post.id }}").scrollIntoView();
+          }
         </script>
       </div>
     </li>

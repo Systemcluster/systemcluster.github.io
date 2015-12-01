@@ -24,6 +24,7 @@
     align-content: center;
   }
 
+  z-index: 101;
 }
 
 .site-title {
@@ -176,7 +177,9 @@
 }
 
 .post {
-
+  // fix for anchor scrolling
+  margin-top: -70-$spacing-unit;
+  padding-top: 70+$spacing-unit;
 }
 
 .post-content {
