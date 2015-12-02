@@ -10,7 +10,7 @@ Interesting or otherwise relevant projects I've been working on are listed here.
 
 ## Web Applications
 
-* <a class="list-header" href="/Secure-Chat/" data-no-turbolinks>Polarity Connection</a>
+* <a class="list-header" href="/Secure-Chat/" data-no-turbolink>Polarity Connection</a>
   Serverless peer-to-peer messaging application. <span class="addendum">(Work in progress)</span>
 
 * <a class="list-header" href="/chaika/" data-no-turbolink>Be Chaika</a>
