@@ -13,7 +13,7 @@ synopsis: >
 
 Image effects are a great way to improve the visual quality of a game. But working on a scene that relies on them can be inconvenient, since they're only visible in the game view - not in the editor view.
 
-A simple solution to avoid having to switch to the game view to see the final result is to replicate all image effects from the games main camera in the scene view camera. This can be achieved with a very small script that can be seen below.
+A simple solution to avoid having to switch to the game view to see the final result is to replicate all image effects from the games main camera in the scene view camera. This can be achieved with a small script.
 
 {% highlight csharp %}
 

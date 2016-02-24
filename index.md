@@ -1,6 +1,9 @@
 ---
 layout: landing
 
+menu_position: 1
+menu_title: Projects
+
 ---
 
 
