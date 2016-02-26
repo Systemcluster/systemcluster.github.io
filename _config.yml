@@ -12,15 +12,35 @@ gravatar_username: b8bae866d3aafaa9b4cce23f48b78c0b
 gplus_username: ChristianSdunek
 youtube_username: ChristianSdunek
 
+timezone: "Europe/Berlin"
+
+limit_posts: 0
+
 paginate: 8
 paginate_path: /articles/:num/
 permalink: /articles/:year/:month/:day/:title/
 
+defaults:
+  - 
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      published: true
+      author: "Christian Sdunek"
+
+gems: 
+  - jekyll-paginate
+  - jekyll-coffeescript
+
+future: true
+
+sass:
+    style: compressed
 
 # Build settings
-safe: true
 markdown: kramdown
-
 
 # Kramdown settings
 kramdown:

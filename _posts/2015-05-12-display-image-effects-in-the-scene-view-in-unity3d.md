@@ -1,9 +1,7 @@
 ---
-layout: post
-title: "Display Image Effects in the Scene View in Unity3D"
+title: Display Image Effects in the Scene View in Unity3D
 date: 2015-05-12 02:00:00
 categories: Unity3d C#
-author: Christian Sdunek
 synopsis: >
   Image effects are a great way to improve the visual quality of a game. But working on a scene that relies on them can be inconvenient, since they're only visible in the game view.
 
