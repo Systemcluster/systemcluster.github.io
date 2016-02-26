@@ -33,6 +33,11 @@ Interesting or otherwise relevant projects I've been working on are listed here.
 * <a class="list-header" href="https://chrome.google.com/webstore/detail/twitter-auto-update/ddbjabcmjjifognjcopebcllgpbdjlbm" data-no-turbolink>Twitter Auto Update</a>
   Extension for Google Chrome to automatically update the Twitter Timeline when new tweets are available.
 
+## Games
+
+* <a class="list-header" href="https://github.com/Systemcluster/TheImpossibleClone" data-no-turbolink>The Impossible Clone</a>
+  A simple Jump'n'Run game programmed in Java.
+
 ## Webdesign projects
 
 * <a class="list-header" href="http://cleanslategames.com" data-no-turbolink>Cleanslate Games</a>
