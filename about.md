@@ -17,6 +17,8 @@ Welcome! I created this site to host and present my projects, write about ideas 
 
 Some of my personal and open-source projects can be found on this site or in my [GitHub account](https://github.com/systemcluster). All software and source code on this site, if not stated otherwise, is subject to the [zlib license]({{ "/license/" | prepend: site.baseurl }}).
 
+You can contact me by sending an email to *info @ this domain*.
+
   
 ---
 
