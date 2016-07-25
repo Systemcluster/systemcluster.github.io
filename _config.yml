@@ -4,7 +4,7 @@ email: systemcluster@users.noreply.github.com
 description: >
   Web Design, Programming & Game Development
 baseurl: "" # subpath of the site without leading and trailing slash
-url: https://systemcluster.github.io # the base hostname & protocol 
+url: https://systemcluster.me # the base hostname & protocol 
 
 twitter_username:
 github_username: systemcluster
