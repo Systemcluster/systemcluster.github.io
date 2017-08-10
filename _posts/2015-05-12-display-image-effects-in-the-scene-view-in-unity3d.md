@@ -1,8 +1,10 @@
 ---
-title: Display Image Effects in the Scene View in Unity3D
+layout: post
+title: Display Image Effects in the Scene View in Unity 4
 date: 2015-05-12 02:00:00
+comments: true
 categories: Unity3d C#
-synopsis: >
+excerpt: >
   Image effects are a great way to improve the visual quality of a game. But working on a scene that relies on them can be inconvenient, since they're only visible in the game view.
 
   A simple solution to avoid having to switch to the game view to see the final result is to replicate all image effects from the games main camera in the scene view camera.
@@ -12,6 +14,8 @@ synopsis: >
 Image effects are a great way to improve the visual quality of a game. But working on a scene that relies on them can be inconvenient, since they're only visible in the game view - not in the editor view.
 
 A simple solution to avoid having to switch to the game view to see the final result is to replicate all image effects from the games main camera in the scene view camera. This can be achieved with a small script.
+
+__Note__: This guide assumes Unity 4.x and the now outdated legacy image effects. The modern post-processing stack used in more recent versions of Unity already makes effects visible in the editor camera by default.
 
 {% highlight csharp %}
 

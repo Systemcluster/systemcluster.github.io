@@ -1,47 +1,95 @@
-# Site settings
-title: Systemcluster
-email: systemcluster@users.noreply.github.com
-description: >
-  Web Design, Programming & Game Development
-baseurl: "" # subpath of the site without leading and trailing slash
-url: https://systemcluster.me # the base hostname & protocol 
 
-twitter_username:
-github_username: systemcluster
-gravatar_username: b8bae866d3aafaa9b4cce23f48b78c0b
-gplus_username: ChristianSdunek
-youtube_username: ChristianSdunek
+title:        Systemcluster
+email:        me@systemcluster.me
+description:  >
+  Christian Sdunek's personal website & project archive
+url:          "https://systemcluster.me" 
+baseurl:      ""
+logo:         "/img/avatar.jpg"
 
 timezone: "Europe/Berlin"
 
-limit_posts: 0
 
-paginate: 8
-paginate_path: /articles/:num/
-permalink: /articles/:year/:month/:day/:title/
-
-defaults:
-  - 
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      published: true
-      author: "Christian Sdunek"
-
-gems: 
-  - jekyll-paginate
-  - jekyll-coffeescript
-
-future: true
-
-sass:
-    style: compressed
-
-# Build settings
 markdown: kramdown
+theme:    minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
 
-# Kramdown settings
-kramdown:
-  input: GFM
+
+markdown:     kramdown
+highlighter:  rouge
+
+
+sidebar:
+  - projects
+  - articles
+  - work
+  - about
+
+
+paginate:       8
+paginate_path:  /articles/:num/
+permalink:      /articles/:year/:month/:day/:title/
+
+collections:
+  work:
+    output: false
+    #permalink: /:collection/:title
+  projects:
+    output: true
+    permalink: /:collection/:title
+  
+
+owner:
+  name: Christian Sdunek
+  avatar: "/img/chaika-med.png"
+  gravatar: "b8bae866d3aafaa9b4cce23f48b78c0b"
+  job: "Software/Web/Game developer"
+  bio: >
+    Does freelance work. 
+    Writes games as his pastime.
+  email: me@systemcluster.me
+  disqus-shortname: systemcluster #username
+  twitter: #username
+  facebook: #username
+  google:
+    plus: ChristianSdunek #username
+    analytics: UA-104228705-1
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: Systemcluster #username
+  gitlab: Systemcluster
+  bitbucket: Systemcluster
+  stackoverflow: # 123456/username # from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+  itchio: systemcluster
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

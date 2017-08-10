@@ -1,27 +1,87 @@
 ---
 layout: default
 ---
-<div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <span>
-      <span class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.meta %} &middot; {{ page.meta }}{% endif %}</span>
-      {% unless page.categories == empty %}
-        <span class="post-meta">
-          <span class="fa fa-fw fa-tags"></span>
-          {% for category in page.categories %}
-            <a class="category-link" href="{{ "/articles/categories/" | prepend: site.baseurl }}#{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-          {% endfor %}
+<!--a class="btn" href= "{{ site.baseurl }}/" >
+  Home
+</a-->
+
+<article>
+  {% if page.image.feature %}
+  <div class="post-image-feature">
+    <img class="feature-image" src=
+    {% if page.image.feature contains 'https' or page.image.feature contains 'http' %}
+    "{{ page.image.feature }}"
+    {% else %}
+    "{{ site.baseurl }}/img/{{ page.image.feature }}"
+    {% endif %}
+    alt="{{ page.title }} feature image">
+
+    {% if page.image.credit %}
+    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
+    {% endif %}
+  </div><!-- /.image-wrap -->
+  {% endif %}
+
+
+  <div id="post">
+    <header class="post-header">
+      <h2 title="{{ page.title }}">{{ page.title }}</h2>
+      <span class="post-meta">
+        <span class="post-date">
+          {{ page.date | date: "%-d %b %Y" | upcase }}
         </span>
-      {% endunless %}
-    </span>
-  </header>
+        {% if page.categories.size > 0 %}
+        •
+        {% for cat in page.categories %}
+          <a class="post-cat" href="{{ site.baseurl }}/categories/#{{ cat }}">{{ cat }}</a>
+          {% unless forloop.last %}
+          <span>/</span>
+          {% endunless %}
+        {% endfor %}
+        {% endif %}
+        •
+        {% include read_time.html %}
+      </span>
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+    </header>
 
-  <div class="post-backlink"><a href="{{ "/articles/" | prepend: site.baseurl }}"><span class="fa fa-fw fa-long-arrow-left"></span> View more articles</a></div>
+    <section class="post-content">
+      {{ content }}
+    </section>
+  </div>
+<article>
 
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u={{ site.url }}{{ page.url }}" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url={{ site.url }}{{ page.url }}" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+{% if site.owner.disqus-shortname and page.comments == true %}
+<div class="comment-buttons" id="disqus_thread">
+  {% include disqus.html %}
+  <h6>Comment with: </h6>
+  <ul class="comment-buttons-list" style="display:none;">
+    <li>
+      <a href="#" onclick="disqus_load(); this.disabled=true; return false;" class="disqus btn" title="Load Disqus Content"><i class="fa fa-comment-o"></i><span> Disqus</span></a>
+    </li>
+  </ul>
 </div>
+<script>document.getElementsByClassName('comment-buttons-list')[0].style.display = "block";</script>
+{% endif %}

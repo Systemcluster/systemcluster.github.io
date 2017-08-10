@@ -1,93 +1,30 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "utf-8";
+@charset "UTF-8";
 
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   15px;
-$small-font-size:  0.875rem;
-$base-line-height: 1.5;
-$code-font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-$code-font-size:   0.8rem;
-$header-font-family: "Lobster", $base-font-family;
+// Mixins
+@import "components/mixins";
 
-$spacing-unit:     34px;
+// Variables
+@import "components/variables";
 
-$text-color:       #111;
-$text-color-bright:rgb(200,200,200);
-$background-color: #fefefe;
-$brand-color:      #2a7ae2;
-$header-color:     rgb(232, 0, 100);
+// Reset
+@import "components/normalize";
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-$grey-color-medium:lighten($grey-color, 20%);
 
-$white-color:      rgb(254,254,254);
-$header-text-color:$text-color;
+// Components
+@import "components/helpers";
+@import "components/grid";
+@import "components/typography";
+@import "components/buttons";
+@import "components/syntax-highlighting";
+@import "components/global";
 
-$animation-speed:  0.15s;
+// Pages styling
+@import "pages/layout";
+@import "pages/tags";
+@import "pages/archive";
+@import "pages/post";
 
-// Width of the content area
-$content-width:    900px;
-
-$small-screen:     600px;
-$medium-screen:    800px;
-
-::selection {
-  background-color: $header-color;
-  color: $white-color;
-}
-
-@mixin animated-underscore($height) {
-    & {
-      position: relative;
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      width: 0%;
-      height: $height;
-      bottom: 0;
-      left: 0;
-      margin-bottom: 1px;
-      background-color: $grey-color;
-
-      -wekbit-transition: all $animation-speed ease;
-      -moz-transition: all $animation-speed ease;
-      -o-transition: all $animation-speed ease;
-      transition: all $animation-speed ease;
-    }
-    &:hover:before {
-      width: 100%;  
-      background-color: $grey-color;
-    }
-}
-@mixin animated-color($color) {
-  & {
-    -wekbit-transition: color $animation-speed*1.5 ease;
-    -moz-transition: color $animation-speed*1.5 ease;
-    -o-transition: color $animation-speed*1.5 ease;
-    transition: color $animation-speed*1.5 ease;
-  }
-  &:hover {
-    color: $color;
-  }
-}
-
-@mixin media($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-    "base",
-    "layout",
-    "syntax-highlighting",
-    "customizations",
-
-    "font-awesome/font-awesome"
-;
+@import "components/additions";

@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+
+
+<h2>Latest Articles</h2>
+{% for post in site.posts limit:3 %}
+{% assign content = post.content %}
+<article class="post">
+	<header class="post-header">
+    <span class="post-meta">
+      <span class="post-date">
+        {{ post.date | date: "%-d %b %Y" | upcase }}
+      </span>
+      {% if post.categories.size > 0 %}
+      •
+      {% for cat in post.categories %}
+        <span class="post-cat">{{ cat }}</span>
+        {% unless forloop.last %}
+        <span>/</span>
+        {% endunless %}
+      {% endfor %}
+      {% endif %}
+      •
+      {% include read_time.html %}
+    </span>
+    <h4>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="post-title" title="{{ post.title }}">{{ post.title }}</a>
+      {% if post.link %}
+      <a class="post-title-link" href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-external-link"></i></a>
+      {% endif %}
+	</h4>
+  </header>
+  {% if post.excerpt %}
+    <section class="post-description">
+      <p>
+        {{ post.excerpt }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a>
+      </p>
+    </section>
+  {% endif %}
+</article>
+{% endfor %}
+
+<a class="btn btn-secondary" href= "{{ site.baseurl }}/articles" >
+  All Articles
+</a>
+
+<hr>
+
+<h2>Latest Projects</h2>
+{% include list-projects.html number=3 %}
+
+<a class="btn btn-secondary" href= "{{ site.baseurl }}/projects" >
+  All Projects
+</a>
+
+<hr>
+
+<h2>Latest Contracts</h2>
+{% include list-work.html number=1 %}
+
+<a class="btn btn-secondary" href= "{{ site.baseurl }}/work" >
+  All Contracts
+</a>

@@ -1,0 +1,72 @@
+{% assign sorted_work = site.projects | sort: 'date' | reverse %}
+{% if include.number > 0 %}
+	{% assign number = include.number %}
+{% else %}
+	{% assign number = 50 %}
+{% endif %}
+{% for post in sorted_work limit:number %}
+<article class="post">
+	<header class="post-header">
+
+		<span class="post-meta">
+			<span class="post-launched">
+				{{ post.launched }}
+			</span>
+			{% if post.categories.size > 0 %}
+			&bullet;
+			{% for cat in post.categories %}
+				<span class="post-cat">{{ cat }}</span>
+				{% unless forloop.last %}
+				<span>/</span>
+				{% endunless %}
+			{% endfor %}
+			{% endif %}
+			{%if post.website %}
+			<span class="post-website">
+				<a href="{{ post.website.url }}">{{ post.website.name }}</a>
+			</span>
+			{% endif %}
+		</span>
+
+		<h4>
+			<a class="post-title" href="{{ post.link }}" target="_blank" title="{{ post.title }}">{{ post.title }}</a>
+			{% if post.link %}
+			<a class="post-title-link" href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-external-link"></i></a>
+			{% endif %}
+		</h4>
+
+		{% if post.author %}
+			{% assign author = site.data.authors[post.author] %}
+		{% else %}
+			{% assign author = site.owner %}
+		{% endif %}
+
+	</header>
+
+    {% if post.excerpt %}
+    <section class="post-description">
+      <p>
+        {{ post.excerpt }}
+      </p>
+    </section>
+	{% endif %}
+
+
+    {% if post.image.feature %}
+    <div class="post-image-feature">
+      <img src=
+      {% if post.image.feature contains 'http' %}
+      "{{ post.image.feature }}"
+      {% else %}
+      "{{ site.baseurl }}/img/{{ post.image.feature }}"
+      {% endif %}
+      alt="{{ post.title }} feature image">
+
+      {% if post.image.credit %}
+      <span class="image-credit">Photo Credit: <a href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></span>
+      {% endif %}
+    </div><!-- /.image-wrap -->
+    {% endif %}
+
+</article>
+{% endfor %}
