@@ -10,8 +10,8 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" async>
-  <link rel="stylesheet" href="{{ site.baseurl }}/css/icons.css" async>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" async="true">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/icons.css" async="true">
   <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
