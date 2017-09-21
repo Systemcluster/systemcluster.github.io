@@ -91,4 +91,4 @@ public static class EditorCamera {
 
 This script adds a delegate to the scene view that will be called each time the scene view updates. Every few seconds it removes all current `PostEffectsBase` components from the scene view camera (in case they have been updated), and subsequently replicates all components of the same type from the scenes main camera, thus making the image effects visible in the scene view. Of course it can also be extended to include custom image effects or other scripts that don't derive from Unitys `PostEffectsBase`.
 
-All that's required is to add this script to the project. Scene view effects will be enabled by default and can be toggled in the menu bar.
+All that's required is to add this script to the project, placed inside an `Editor` subdirectory. Scene view effects will be enabled by default and can be toggled in the menu bar.
