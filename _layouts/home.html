@@ -42,24 +42,33 @@ layout: default
 </article>
 {% endfor %}
 
-<a class="btn btn-primary btn-seeall" href= "{{ site.baseurl }}/articles" >
-  All Articles
-</a>
+<div class="post-buttons">
+  <a class="btn btn-primary btn-seeall" href= "{{ site.baseurl }}/articles" >
+    <i class="fa fa-arrow-right"></i>
+    <span>All Articles</span>
+  </a>
+</div>
 
 <hr>
 
 <h2>Latest Projects</h2>
 {% include list-projects.html number=3 %}
 
-<a class="btn btn-primary btn-seeall" href= "{{ site.baseurl }}/projects" >
-  All Projects
-</a>
+<div class="post-buttons">
+  <a class="btn btn-primary btn-seeall" href= "{{ site.baseurl }}/projects" >
+    <i class="fa fa-arrow-right"></i>
+    <span>All Projects</span>
+  </a>
+</div>
 
 <hr>
 
 <h2>Latest Contract Work</h2>
 {% include list-work.html number=1 %}
 
-<a class="btn btn-primary btn-seeall" href= "{{ site.baseurl }}/work" >
-  All Contracts
+<div class="post-buttons">
+  <a class="btn btn-primary btn-seeall" href= "{{ site.baseurl }}/work" >
+    <i class="fa fa-arrow-right"></i>
+    <span>All Contracts</span>
 </a>
+</div>
