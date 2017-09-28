@@ -309,11 +309,24 @@ section.post {
       margin-right: 0.5em;
       span {
         display: inline;
+        min-width: 95px;
         @include media-query($small-screen) {
           display: inline;
           margin: 0.5em;
         }
       }
+    }
+  }
+}
+
+// post buttons
+.post-buttons {
+  span {
+    display: inline;
+    min-width: 95px;
+    @include media-query($small-screen) {
+      display: inline;
+      margin: 0.5em;
     }
   }
 }
