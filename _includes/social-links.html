@@ -7,37 +7,38 @@
     rhs = p[1];
     document.write("<a class=\"outbound-link-item\" target=\"_blank\" href=\"mailto");
     document.write(":" + lhs + "@");
-    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fab fa-envelope\"></i><\/a>");
   }
 </script>
 <div class="outbound-links">
   <ul>
     {% if author.email %}
       <li>
-        <a class="outbound-link-item" title="Contact / Email" href="/contact"><i class="fa fa-fw fa-envelope"></i></a>
+        <a class="outbound-link-item" title="Contact / Email" href="/contact"><i class="fas fa-envelope"></i></a>
       </li>
     {% endif %}
-    {% if author.github %}<li><a href="//github.com/{{ author.github }}" title="Github" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>{% endif %}
-    {% if author.bitbucket %}<li><a href="//bitbucket.com/{{ author.bitbucket }}" title="Bitbucket" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-bitbucket"></i></a></li>{% endif %}
-    {% if author.gitlab %}<li><a href="//gitlab.com/{{ author.gitlab }}" title="Gitlab" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-gitlab"></i></a></li>{% endif %}
-    {% if author.twitter %}<li><a href="//twitter.com/{{ author.twitter }}" title="Twitter" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>{% endif %}
-    {%if author.itchio %}<li><a href="//itch.io/profile/{{ author.itchio }}" title="Itch.io" class="outbound-link-item" target="_blank"><i class="fa fa-fw icon-itchio"></i></a></li>{% endif %}
-    {% if author.facebook %}<li><a href="//facebook.com/{{ author.facebook }}" title="Facebook" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-facebook"></i></a></li>{% endif %}
-    {% if author.google.plus %}<li><a href="//plus.google.com/+{{ author.google.plus }}" title="Google" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-google-plus"></i></a></li>{% endif %}
-    {% if author.linkedin %}<li><a href="//linkedin.com/in/{{ author.linkedin }}" title="LinkedIn" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>{% endif %}
-    {% if author.xing %}<li><a href="//www.xing.com/profile/{{ author.xing }}" title="Xing" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-xing"></i></a></li>{% endif %}
-    {% if author.instagram %}<li><a href="//instagram.com/{{ author.instagram }}" title="Instagram" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>{% endif %}
-    {% if author.tumblr %}<li><a href="//{{ author.tumblr }}.tumblr.com" title="Tumblr" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-tumblr"></i></a></li>{% endif %}
-    {% if author.stackoverflow %}<li><a href="//stackoverflow.com/users/{{ author.stackoverflow }}" title="StackOverflow" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a></li>{% endif %}
-    {% if author.lastfm %}<li><a href="//lastfm.com/user/{{ author.lastfm }}" title="LastFM" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-music"></i></a></li>{% endif %}
-    {% if author.dribbble %}<li><a href="//dribbble.com/{{ author.dribbble }}" title="Dribble" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-dribbble"></i></a></li>{% endif %}
-    {% if author.pinterest %}<li><a href="//www.pinterest.com/{{ author.pinterest }}" title="Pinterest" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-pinterest"></i></a></li>{% endif %}
-    {% if author.foursquare %}<li><a href="//foursquare.com/{{ author.foursquare }}" title="Foursquare" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-foursquare"></i></a></li>{% endif %}
-    {% if author.steam %}<li><a href="//steamcommunity.com/id/{{ author.steam }}" title="Steam" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-steam"></i></a></li>{% endif %}
-    {% if author.youtube %}<li><a href="//youtube.com/user/{{ author.youtube }}" title="YouTube" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-youtube"></i></a></li>{% endif %}
-    {% if author.soundcloud %}<li><a href="//soundcloud.com/{{ author.soundcloud }}" title="Soundcloud" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-soundcloud"></i></a></li>{% endif %}
-    {% if author.weibo %}<li><a href="//www.weibo.com/{{ author.weibo }}" title="Weibo" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-weibo"></i></a></li>{% endif %}
-    {% if author.flickr %}<li><a href="//www.flickr.com/{{ author.flickr }}" title="Flickr" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-flickr"></i></a></li>{% endif %}
-    {% if author.codepen %}<li><a href="//codepen.io/{{ author.codepen }}" title="Codepen" class="outbound-link-item" target="_blank"><i class="fa fa-fw fa-codepen"></i></a></li>{% endif %}
+    {% if author.keybase %}<li><a href="//keybase.io/{{ author.keybase }}" title="Keybase" class="outbound-link-item" target="_blank"><i class="fas fa-key"></i></a></li>{% endif %}
+    {% if author.github %}<li><a href="//github.com/{{ author.github }}" title="Github" class="outbound-link-item" target="_blank"><i class="fab fa-github"></i></a></li>{% endif %}
+    {% if author.bitbucket %}<li><a href="//bitbucket.com/{{ author.bitbucket }}" title="Bitbucket" class="outbound-link-item" target="_blank"><i class="fab fa-bitbucket"></i></a></li>{% endif %}
+    {% if author.gitlab %}<li><a href="//gitlab.com/{{ author.gitlab }}" title="Gitlab" class="outbound-link-item" target="_blank"><i class="fab fa-gitlab"></i></a></li>{% endif %}
+    {% if author.twitter %}<li><a href="//twitter.com/{{ author.twitter }}" title="Twitter" class="outbound-link-item" target="_blank"><i class="fab fa-twitter"></i></a></li>{% endif %}
+    {% if author.itchio %}<li><a href="//itch.io/profile/{{ author.itchio }}" title="Itch.io" class="outbound-link-item" target="_blank"><i class="fab icon-itchio"></i></a></li>{% endif %}
+    {% if author.facebook %}<li><a href="//facebook.com/{{ author.facebook }}" title="Facebook" class="outbound-link-item" target="_blank"><i class="fab fa-facebook"></i></a></li>{% endif %}
+    {% if author.google.plus %}<li><a href="//plus.google.com/+{{ author.google.plus }}" title="Google" class="outbound-link-item" target="_blank"><i class="fab fa-google-plus"></i></a></li>{% endif %}
+    {% if author.linkedin %}<li><a href="//linkedin.com/in/{{ author.linkedin }}" title="LinkedIn" class="outbound-link-item" target="_blank"><i class="fab fa-linkedin"></i></a></li>{% endif %}
+    {% if author.xing %}<li><a href="//www.xing.com/profile/{{ author.xing }}" title="Xing" class="outbound-link-item" target="_blank"><i class="fab fa-xing"></i></a></li>{% endif %}
+    {% if author.instagram %}<li><a href="//instagram.com/{{ author.instagram }}" title="Instagram" class="outbound-link-item" target="_blank"><i class="fab fa-instagram"></i></a></li>{% endif %}
+    {% if author.tumblr %}<li><a href="//{{ author.tumblr }}.tumblr.com" title="Tumblr" class="outbound-link-item" target="_blank"><i class="fab fa-tumblr"></i></a></li>{% endif %}
+    {% if author.stackoverflow %}<li><a href="//stackoverflow.com/users/{{ author.stackoverflow }}" title="StackOverflow" class="outbound-link-item" target="_blank"><i class="fab fa-stack-overflow"></i></a></li>{% endif %}
+    {% if author.lastfm %}<li><a href="//lastfm.com/user/{{ author.lastfm }}" title="LastFM" class="outbound-link-item" target="_blank"><i class="fab fa-music"></i></a></li>{% endif %}
+    {% if author.dribbble %}<li><a href="//dribbble.com/{{ author.dribbble }}" title="Dribble" class="outbound-link-item" target="_blank"><i class="fab fa-dribbble"></i></a></li>{% endif %}
+    {% if author.pinterest %}<li><a href="//www.pinterest.com/{{ author.pinterest }}" title="Pinterest" class="outbound-link-item" target="_blank"><i class="fab fa-pinterest"></i></a></li>{% endif %}
+    {% if author.foursquare %}<li><a href="//foursquare.com/{{ author.foursquare }}" title="Foursquare" class="outbound-link-item" target="_blank"><i class="fab fa-foursquare"></i></a></li>{% endif %}
+    {% if author.steam %}<li><a href="//steamcommunity.com/id/{{ author.steam }}" title="Steam" class="outbound-link-item" target="_blank"><i class="fab fa-steam"></i></a></li>{% endif %}
+    {% if author.youtube %}<li><a href="//youtube.com/user/{{ author.youtube }}" title="YouTube" class="outbound-link-item" target="_blank"><i class="fab fa-youtube"></i></a></li>{% endif %}
+    {% if author.soundcloud %}<li><a href="//soundcloud.com/{{ author.soundcloud }}" title="Soundcloud" class="outbound-link-item" target="_blank"><i class="fab fa-soundcloud"></i></a></li>{% endif %}
+    {% if author.weibo %}<li><a href="//www.weibo.com/{{ author.weibo }}" title="Weibo" class="outbound-link-item" target="_blank"><i class="fab fa-weibo"></i></a></li>{% endif %}
+    {% if author.flickr %}<li><a href="//www.flickr.com/{{ author.flickr }}" title="Flickr" class="outbound-link-item" target="_blank"><i class="fab fa-flickr"></i></a></li>{% endif %}
+    {% if author.codepen %}<li><a href="//codepen.io/{{ author.codepen }}" title="Codepen" class="outbound-link-item" target="_blank"><i class="fab fa-codepen"></i></a></li>{% endif %}
   </ul>
 </div>

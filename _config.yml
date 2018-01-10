@@ -56,7 +56,7 @@ owner:
   twitter: #username
   facebook: #username
   google:
-    plus: ChristianSdunek #username
+    plus: #ChristianSdunek #username
     analytics: UA-104228705-1
     verify:
     ad-client:
@@ -81,6 +81,7 @@ owner:
   flickr: #username
   codepen: #username
   itchio: systemcluster
+  keybase: systemcluster
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
