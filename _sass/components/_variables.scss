@@ -3,7 +3,7 @@
  */
 
 // Google font import
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,400,400italic|Roboto+Mono);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,400,400italic|Roboto+Mono|PT+Sans+Narrow);
 
 // Custom variables
 
@@ -28,6 +28,7 @@ $font-family-sans-serif:     "Source Sans Pro", "Helvetica Neue", Helvetica, Ari
 $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      "Roboto Mono", "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
+$font-family-headings:		"PT Sans Narrow", $font-family-base !default;
 
 $base-font-family:			 $font-family-base;
 
