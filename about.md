@@ -8,7 +8,7 @@ permalink: /about/
 Website and content &copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}.  
 Chaika face illustration provided by [Switchdraw](https://switchdraw.deviantart.com/art/CHAIKA-s-Face-456893291). Jekyll Theme based on [Leonids](https://github.com/renyuanz/leonids).
 
-Bitcoin (BTC): `15dgYh2PzVkFb9PT67zw9K7zv7iTqpH4pA`  
+Bitcoin: `15dgYh2PzVkFb9PT67zw9K7zv7iTqpH4pA`  
 Monero: `43UjTTHsMgr5deCwWqxNy8CA7XbviHfBQefXomKeQPgvga4CMJFwF5XMeigj6pEwPnczD6qE4bi78EQz9j88y5MaEEJJQaG`
 
 ---
