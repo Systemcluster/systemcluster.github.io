@@ -4,6 +4,11 @@
 {% else %}
 	{% assign number = 50 %}
 {% endif %}
+{% if include.noimage == true %}
+	{% assign image = false %}
+{% else %}
+	{% assign image = true %}
+{%endif %}
 {% for post in sorted_work limit:number %}
 <article class="post">
 	<header class="post-header">
@@ -41,22 +46,23 @@
     </section>
 	{% endif %}
 
+	{% if image == true %}
+		{% if post.image.feature %}
+		<div class="post-image-feature">
+		<img src=
+		{% if post.image.feature contains 'http' %}
+		"{{ post.image.feature }}"
+		{% else %}
+		"{{ site.baseurl }}/img/{{ post.image.feature }}"
+		{% endif %}
+		alt="{{ post.title }} feature image">
 
-    {% if post.image.feature %}
-    <div class="post-image-feature">
-      <img src=
-      {% if post.image.feature contains 'http' %}
-      "{{ post.image.feature }}"
-      {% else %}
-      "{{ site.baseurl }}/img/{{ post.image.feature }}"
-      {% endif %}
-      alt="{{ post.title }} feature image">
-
-      {% if post.image.credit %}
-      <span class="image-credit">Image Credit: <a href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></span>
-      {% endif %}
-    </div><!-- /.image-wrap -->
-    {% endif %}
+		{% if post.image.credit %}
+		<span class="image-credit">Image Credit: <a href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></span>
+		{% endif %}
+		</div><!-- /.image-wrap -->
+		{% endif %}
+	{% endif %}
 
 </article>
 {% endfor %}
