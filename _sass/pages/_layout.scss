@@ -68,11 +68,13 @@
     li {
       list-style: none;
       display: inline-block;
-      margin-left: 0.3em;
+      margin-left: 0.11em;
+      margin-right: 0.11em;
       font-size: 0.98rem;
       a.outbound-link-item {
+        min-width: 23px;
+        display: inline-block;
         color: $secondary;
-        padding: 0.25rem;
         &:hover,
         &:focus {
           color: lighten($secondary, 14%);
