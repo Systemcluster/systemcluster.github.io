@@ -28,6 +28,8 @@
     height: 75px;
     float: none;
 
+    -ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none;
+
     @include media-query($small-screen) {
       width: 100px;
       height: 100px;
