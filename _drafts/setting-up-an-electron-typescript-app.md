@@ -22,13 +22,12 @@ We have a few options when bundling the project:
   <br>
   All dependencies can be [minified](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/), and [tree shaking](https://webpack.js.org/guides/tree-shaking/) might reduce the amount of included code.
 
-  
-  Disadvantage of this option is the inability to use native dependencies.
+  Disadvantage of this option is the inability to use native dependencies or those that depend on loose files included in the module.
   <br>
-  Also there's a possible duplication of dependency code between the main bundle and each renderer bundle
+  Also there's a possible duplication of dependency code between the main bundle and
   <br>
-  which however can be circumvented by configuring webpacks [DllPlugin](https://webpack.js.org/plugins/dll-plugin/).
-  
+   each renderer bundle, which however can be circumvented by configuring webpacks [DllPlugin](https://webpack.js.org/plugins/dll-plugin/).
+
 2. Do not bundle external dependencies. 
 
   `require` calls will he handled at runtime through node, native dependencies can be used.
@@ -42,12 +41,11 @@ We have a few options when bundling the project:
   although this is [partially compensated by electron-builder](https://www.electron.build/configuration/contents) and can further be fine-tuned manually.
   <br>
   Also, nodes `require` [carries some overhead](https://github.com/electron/electron/issues/169).
-  
+
 3. Only bundle some dependencies.
 
   This approach combines the advantages of the two other options, but requires additional configuration effort.
   <br>
-  Dependencies have to be split up between the two `package.json` files to avoid already bundled packages to be included in the build.
   
 For the purpose of simplification we will proceed with the second approach, but I will provide a follow-up article outlining the third approach in detail.
 
