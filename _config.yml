@@ -1,8 +1,6 @@
 
 title:        Systemcluster
 email:        me@systemcluster.me
-description:  >
-  Christian Sdunek's personal website & project archive
 url:          "https://systemcluster.me" 
 baseurl:      ""
 logo:         "/img/avatar.jpg"
@@ -44,9 +42,9 @@ collections:
   
 
 owner:
-  name: Christian Sdunek
+  name: Systemcluster
   avatar: "/img/chaika-med.png"
-  gravatar: "b8bae866d3aafaa9b4cce23f48b78c0b"
+  gravatar: 
   job: "Software/Web/Game developer"
   bio: >
     Does freelance software work. 
@@ -56,7 +54,7 @@ owner:
   twitter: #username
   facebook: #username
   google:
-    plus: #ChristianSdunek #username
+    plus:
     analytics: UA-104228705-1
     verify:
     ad-client:
