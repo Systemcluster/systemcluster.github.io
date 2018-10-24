@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Elsa C++17/Lua Interface
+title: Elsa - C++17/Lua Interface
 date: 2017-08-08 12:00:00 +0200
 link: https://github.com/Systemcluster/Elsa
 categories: C++ Library Lua
