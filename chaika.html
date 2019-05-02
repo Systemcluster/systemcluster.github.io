@@ -117,6 +117,10 @@ permalink: /chaika/
     var reset = document.getElementById("chaika_reset");
     var debug = document.getElementById("chaika_debug");
     var image = document.getElementById("chaika_image");
+    var ready = false;
+    image.onload = function() {
+      ready = true;
+    }
 
     navigator.getUserMedia = (navigator.getUserMedia ||
                               navigator.webkitGetUserMedia ||
@@ -131,7 +135,7 @@ permalink: /chaika/
     var performct = function() {
       var pos = ctracker.getCurrentPosition();
       var par = ctracker.getCurrentParameters();
-      if(pos && ctracker.getScore() > 0.250) {
+      if(ready && pos && ctracker.getScore() > 0.250) {
         context.setTransform(1, 0, 0, 1, 0, 0);
         context.clearRect(0, 0, canvas.width, canvas.height);
 
