@@ -190,7 +190,7 @@ permalink: /chaika/
 
     var fstream = function(stream) {
       var url = window.URL;
-      video.src = url ? url.createObjectURL(stream) : stream;
+      video.srcObject = stream;
       video.addEventListener("playing", initct);
       video.play();
     };
