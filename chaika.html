@@ -1,7 +1,3 @@
----
-permalink: /chaika/
----
-
 <!doctype html>
 <html>
 <head>
@@ -207,7 +203,7 @@ permalink: /chaika/
     if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia({audio: false, video: {width: 720, height: 480}}).then(fstream).catch(ferror);
     }
-    // old api 
+    // old api
     else if(navigator.getUserMedia) {
       navigator.getUserMedia({video:true, audio:false}, fstream, ferror);
     }
