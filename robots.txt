@@ -2,3 +2,4 @@ User-Agent: *
 Sitemap: /sitemap.xml
 Allow: /
 Disallow: /donate
+Disallow: /contact
