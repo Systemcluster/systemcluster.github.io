@@ -3,3 +3,4 @@ Sitemap: /sitemap.xml
 Allow: /
 Disallow: /donate
 Disallow: /contact
+Disallow: /404.html
